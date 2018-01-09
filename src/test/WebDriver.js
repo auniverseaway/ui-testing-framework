@@ -1,6 +1,6 @@
 import webdriver from 'selenium-webdriver';
 
-export default class UIDriver {
+export default class WebDriver {
     constructor() {
         this.username = process.env.SAUCE_USERNAME;
         this.accessKey = process.env.SAUCE_ACCESS_KEY;

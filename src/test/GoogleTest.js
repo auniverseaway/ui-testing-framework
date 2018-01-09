@@ -1,4 +1,3 @@
-import test from 'selenium-webdriver/testing';
 import chai from 'chai';
 
 export default class GoogleTest {
@@ -12,8 +11,6 @@ export default class GoogleTest {
         const should = chai.should();
 
         describe('Google Test', function() {
-            this.timeout(0);
-
             // Ensure Google Opens
             it('Open Google', function() {
                 return driver.get('https://www.google.com');
@@ -31,10 +28,6 @@ export default class GoogleTest {
                 return driver.getTitle().then(function(title) {
                     assert.equal('Google', title);
                 });
-            });
-
-            after(function(done) {
-                driver.quit();
             });
         });
     }

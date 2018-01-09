@@ -1,14 +1,11 @@
 import WebServer from '../../index';
-import GoogleTest from './GoogleTest';
-import UIDriver from './AbstractDexterTest';
+import WebDriver from './WebDriver';
+import TestRunner from './TestRunner';
 
 // Setup WebServer
 const webServer = new WebServer();
 
 // Setup Driver
-const uiDriver = new UIDriver();
+const webDriver = new WebDriver();
 
-// Run Tests
-new GoogleTest(uiDriver.getDriver());
-
-webServer.close();
+new TestRunner(webServer, webDriver.getDriver());

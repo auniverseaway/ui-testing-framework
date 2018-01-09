@@ -7,7 +7,11 @@
         "start": "node index.js",
         "test": "mocha --require @babel/register src/test/app.js"
     },
-    "author": "",
+    "author": "Chris Millar <chris@millr.org>",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:auniverseaway/ui-testing-framework.git"
+    },
     "license": "ISC",
     "devDependencies": {
         "@babel/cli": "^7.0.0-beta.35",
