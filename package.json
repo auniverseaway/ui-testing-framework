@@ -1,0 +1,24 @@
+{
+    "name": "static",
+    "version": "1.0.0",
+    "description": "Testing POC",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "mocha --require @babel/register src/test/app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.35",
+        "@babel/core": "^7.0.0-beta.35",
+        "@babel/preset-env": "^7.0.0-beta.35",
+        "@babel/register": "^7.0.0-beta.35",
+        "babel-core": "^7.0.0-bridge.0",
+        "chai": "^4.1.2",
+        "express": "^4.16.2",
+        "mocha": "^4.0.1",
+        "saucelabs": "^1.4.0",
+        "selenium-webdriver": "^3.6.0"
+    }
+}
