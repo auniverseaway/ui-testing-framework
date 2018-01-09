@@ -1,4 +1,4 @@
-# ui-testing-framework
+# UI Testing Framework
 A simple testing framework with mocha, webdriver, and chai
 
 # Get WebDriver
