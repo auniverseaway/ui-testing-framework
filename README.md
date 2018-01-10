@@ -9,4 +9,21 @@ https://www.npmjs.com/package/selenium-webdriver#installation
     $ npm i
     
 # Test
+## Chrome Only
+
     $ npm test
+
+## Mac Browsers
+Chrome, Firefox, Safari
+
+    $ npm run test-mac
+
+## Windows Browsers
+Chrome, Firefox, Edge, Internet Explorer
+
+    $ npm run test-win
+
+## SauceLabs
+Chrome, Firefox, Safari, Edge, Internet Explorer
+
+    $ npm run test-sauce

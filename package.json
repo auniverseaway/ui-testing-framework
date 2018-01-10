@@ -5,6 +5,9 @@
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
+        "test-win": "TEST_BROWSER=win npm test",
+        "test-mac": "TEST_BROWSER=mac npm test",
+        "test-sauce": "TEST_BROWSER=sauce npm test",
         "test": "mocha --require @babel/register src/test/app.js"
     },
     "author": "Chris Millar <chris@millr.org>",

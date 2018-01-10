@@ -2,10 +2,6 @@ import chai from 'chai';
 
 export default class GoogleTest {
     constructor(driver) {
-        this.init(driver);
-    }
-
-    init(driver) {
         // Setup Assertion Library
         const assert = chai.assert;
         const should = chai.should();
