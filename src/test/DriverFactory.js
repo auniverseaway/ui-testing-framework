@@ -1,27 +1,31 @@
 import webdriver from 'selenium-webdriver';
 
+/**
+ * Class representing a DriverFactory
+ */
 export default class DriverFactory {
     constructor(suiteName) {
-
         this.suiteName = suiteName;
-        this.drivers = [];
-
-        this.useSauceLabs = process.env.TEST_BROWSER === 'sauce';
-
         this.getDrivers();
     }
 
+    /**
+     * Get the drivers.
+     */
     getDrivers(){
-        // Test Chrome by default
-        this.getDriver('chrome');
+        this.drivers = [];
 
         const testBrowsers = process.env.TEST_BROWSER;
 
         if (testBrowsers === 'sauce') {
+            this.useSauceLabs = true;
+            this.getDriver('chrome');
             this.getDriver('firefox');
             this.getDriver('safari');
             this.getDriver('microsoftedge');
             this.getDriver('internet explorer');
+        } else {
+            this.getDriver('chrome');
         }
 
         if (testBrowsers === 'win') {
@@ -36,6 +40,10 @@ export default class DriverFactory {
         }
     }
 
+    /**
+     * Get the driver.
+     * @param {string} driverName The name of the driver.
+     */
     getDriver(driverName) {
         let builder = new webdriver.Builder().forBrowser(driverName);
 
@@ -54,6 +62,11 @@ export default class DriverFactory {
         this.drivers.push(driver);
     }
 
+    /**
+     * Get SauceLabs integration.
+     * @param {object} builder The webdriver builder.
+     * @param {string} driverName The name of the driver.
+     */
     getSauceLabs(builder, driverName) {
         const username = process.env.SAUCE_USERNAME;
         const accessKey = process.env.SAUCE_ACCESS_KEY;

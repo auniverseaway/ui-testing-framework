@@ -21,7 +21,7 @@ export default class TestRunner {
         const webDriver = new DriverFactory(suiteName);
         const drivers = webDriver.drivers;
 
-        const saucelabs = this.getSauceLabs();
+        const saucelabs = TestRunner.getSauceLabs();
 
         // Run all the tests for each driver
         drivers.forEach((driver) => {
@@ -64,7 +64,7 @@ export default class TestRunner {
         }
     }
 
-    getSauceLabs() {
+    static getSauceLabs() {
         if (process.env.TEST_BROWSER === 'sauce') {
             const username = process.env.SAUCE_USERNAME;
             const accessKey = process.env.SAUCE_ACCESS_KEY;
